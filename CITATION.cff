@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "Please cite the associated HPRM-Former manuscript and state the dataset release identifier supplied with your approval."
+title: "FSBench-40K: Smoke detection under foggy conditions"
+type: dataset
+authors:
+  - family-names: Wei
+    given-names: Yao
+  - family-names: Qu
+    given-names: Haicheng
+  - family-names: Gao
+    given-names: Tong
+  - family-names: Chen
+    given-names: Hao
+  - family-names: Shi
+    given-names: Cuiping
+preferred-citation:
+  type: unpublished
+  title: "A Heterogeneity-Aware Prototype Routing Transformer with Consensus-Disagreement Memory for Smoke Detection under Foggy Conditions"
+  authors:
+    - family-names: Wei
+      given-names: Yao
+    - family-names: Qu
+      given-names: Haicheng
+    - family-names: Gao
+      given-names: Tong
+    - family-names: Chen
+      given-names: Hao
+    - family-names: Shi
+      given-names: Cuiping
+  year: 2026
+  notes: "Manuscript under review."

@@ -1,0 +1,19 @@
+# Keep dataset archives and completed applications out of this presentation repository.
+data/
+datasets/
+private/
+applications/
+completed-applications/
+approvals/
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.pth
+*.pt
+*.ckpt
+.env
+.env.*
+__pycache__/
+.DS_Store
+Thumbs.db
