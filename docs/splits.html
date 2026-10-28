@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Dataset statistics and split documentation | FSBench-40K</title><style>body{margin:0;background:#f7f9fb;color:#20364a;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}header{background:#fff;border-bottom:1px solid #dce6ec;padding:18px max(24px,calc((100vw - 920px)/2))}header a{font-size:20px;font-weight:750;text-decoration:none;color:#16404e}main{max-width:920px;margin:35px auto 60px;padding:32px 42px 50px;background:#fff;border:1px solid #e1e9ee;border-radius:8px}h1{font-size:32px;line-height:1.25;letter-spacing:-.8px;color:#15354b;margin:8px 0 25px}h2{font-size:21px;line-height:1.4;color:#15354b;margin:32px 0 10px}p,li{color:#4a6477}li{padding:5px 0}a{color:#087476;text-underline-offset:3px}img{max-width:100%;height:auto;border:1px solid #e4ebef;border-radius:6px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #d4e1e8;padding:12px;text-align:left}th{background:#f0f5f7}code{background:#f0f5f7;padding:2px 5px;border-radius:3px;font-size:13px}.back{font-size:14px;display:inline-block;margin-bottom:20px}footer{font-size:13px;color:#60788a;margin-top:40px;padding-top:18px;border-top:1px solid #e1e9ee}a:focus-visible{outline:3px solid #d49d2e;outline-offset:3px}@media(max-width:650px){main{margin:15px 12px;padding:24px 20px}h1{font-size:27px}table{font-size:12px}td,th{padding:8px}} pre{overflow-x:auto;white-space:pre;background:#f0f5f7;padding:18px;border-radius:6px}pre code{padding:0;background:none}</style></head><body><header><a href="../index.html">FSBench-40K</a></header><main><a class="back" href="../index.html">← Project overview</a><h1 id="dataset-statistics-and-split-documentation">Dataset statistics and split documentation</h1>
+<p><a href="../index.html">← Dataset overview</a></p>
+<h2 id="manuscript-reference-distribution">Manuscript reference distribution</h2>
+<p>FSBench-40K denotes <strong>Foggy Smoke Benchmark-40K</strong>. The current manuscript reports the following <strong>40,579-image</strong> distribution, with a target split of <strong>80% training, 10% validation and 10% test</strong>. Integer class counts produce small deviations from the target percentages.</p>
+<table><thead><tr><th>Split</th><th>Normal</th><th>Fog</th><th>Smoke</th><th>SmokeFog</th><th>Total</th></tr></thead><tbody>
+<tr><td>Train</td><td>8,290</td><td>7,304</td><td>8,815</td><td>8,053</td><td>32,462</td></tr>
+<tr><td>Validation</td><td>1,036</td><td>913</td><td>1,101</td><td>1,006</td><td>4,056</td></tr>
+<tr><td>Test</td><td>1,037</td><td>913</td><td>1,103</td><td>1,008</td><td>4,061</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>10,363</strong></td><td><strong>9,130</strong></td><td><strong>11,019</strong></td><td><strong>10,067</strong></td><td><strong>40,579</strong></td></tr>
+</tbody></table>
+<p>This is the distribution reported in the current manuscript. The fixed image inventory, actual counts and split membership of a supplied dataset version are recorded in its release materials.</p>
+<h2 id="evaluation-protocol">Evaluation protocol</h2>
+<ol>
+<li>Learn model parameters on the training subset.</li>
+<li>Select configurations and checkpoints using the validation subset.</li>
+<li>Fix the model and evaluation settings before computing the final test metrics.</li>
+<li>Use the same released split for methods being compared and report the release identifier.</li>
+</ol>
+<p>Additional data, custom partitions or relabelling are described separately when reporting results.</p>
+<h2 id="source-groups-and-related-images">Source groups and related images</h2>
+<p>Release records document the applicable partition protocol and the source groups established during dataset preparation. For a <strong>source-independent partition</strong>, images linked to the same source photo, scene or video are treated as one group and assigned to one subset. Rotations, mirror images, resized copies and crops of the same photo are handled within the same source family; different frames retain their distinct image identities.</p>
+<p>Available source identifiers and the basis of each established relationship are recorded with the release. Source-independent results are associated with the corresponding grouped manifests. A shared filename pattern or a visually similar appearance alone does not establish a source group.</p>
+<h2 id="image-folder-convention">Image-folder convention</h2>
+<pre><code>FSBench-40K/
+├── train/
+│   ├── Normal/
+│   ├── Fog/
+│   ├── Smoke/
+│   └── SmokeFog/
+├── val/
+│   ├── Normal/
+│   ├── Fog/
+│   ├── Smoke/
+│   └── SmokeFog/
+└── test/
+    ├── Normal/
+    ├── Fog/
+    ├── Smoke/
+    └── SmokeFog/</code></pre>
+<p>The folder names denote semantic categories. Use the supplied class mapping for numerical label IDs; the order of categories in this page is not a label-index specification.</p>
+<h2 id="inventory-and-manifest-fields">Inventory and manifest fields</h2>
+<p>The following describes the information to accompany an approved release. The repository does not substitute example image IDs for the final inventory.</p>
+<table><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody>
+<tr><td><code>release_id</code></td><td>Fixed data version associated with the inventory</td></tr>
+<tr><td><code>image_id</code></td><td>Stable identifier for an image in that version</td></tr>
+<tr><td><code>relative_path</code></td><td>Image path within the supplied package</td></tr>
+<tr><td><code>class_name</code></td><td>Normal, Fog, Smoke or SmokeFog</td></tr>
+<tr><td><code>split</code></td><td>train, val or test</td></tr>
+<tr><td><code>sha256</code></td><td>File checksum for integrity verification</td></tr>
+<tr><td><code>source_group_id</code></td><td>Established source family or scene/video group, where available</td></tr>
+<tr><td><code>source_reference</code></td><td>Source attribution or source-record reference, where available</td></tr>
+</tbody></table>
+<h2 id="version-records">Version records</h2>
+<p>The final split manifests and inventory are fixed together with the image release. Changes to images, labels or split membership are recorded under a new version. See <a href="../docs/releases.html">release documentation</a> and <a href="../docs/access.html">data access</a>.</p><footer>FSBench-40K · HPRM-Former · <a href="mailto:quhaicheng@lntu.edu.cn">Contact the corresponding author</a></footer></main></body></html>

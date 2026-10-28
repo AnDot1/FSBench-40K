@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Please cite the associated HPRM-Former manuscript and state the dataset release identifier supplied with your approval."
-title: "FSBench-40K: Smoke detection under foggy conditions"
+title: "FSBench-40K: Foggy Smoke Benchmark-40K"
 type: dataset
 authors:
   - family-names: Wei

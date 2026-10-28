@@ -1,16 +1,66 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>FSBench-40K 项目说明 | FSBench-40K</title><style>body{margin:0;background:#f7f9fb;color:#20364a;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}header{background:#fff;border-bottom:1px solid #dce6ec;padding:18px max(24px,calc((100vw - 920px)/2))}header a{font-size:20px;font-weight:750;text-decoration:none;color:#16404e}main{max-width:920px;margin:35px auto 60px;padding:32px 42px 50px;background:#fff;border:1px solid #e1e9ee;border-radius:8px}h1{font-size:32px;line-height:1.25;letter-spacing:-.8px;color:#15354b;margin:8px 0 25px}h2{font-size:21px;line-height:1.4;color:#15354b;margin:32px 0 10px}p,li{color:#4a6477}li{padding:5px 0}a{color:#087476;text-underline-offset:3px}img{max-width:100%;height:auto;border:1px solid #e4ebef;border-radius:6px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #d4e1e8;padding:12px;text-align:left}th{background:#f0f5f7}code{background:#f0f5f7;padding:2px 5px;border-radius:3px;font-size:13px}.back{font-size:14px;display:inline-block;margin-bottom:20px}footer{font-size:13px;color:#60788a;margin-top:40px;padding-top:18px;border-top:1px solid #e1e9ee}a:focus-visible{outline:3px solid #d49d2e;outline-offset:3px}@media(max-width:650px){main{margin:15px 12px;padding:24px 20px}h1{font-size:27px}table{font-size:12px}td,th{padding:8px}}</style></head><body><header><a href="index.html">FSBench-40K</a></header><main><a class="back" href="index.html">← Project overview</a><h1>FSBench-40K 项目说明</h1>
-<p><strong>面向雾环境下烟雾检测的四分类图像数据集，与 HPRM-Former 配套。</strong></p>
-<p><a href="index.html">English</a> · <a href="forms/FSBench-40K_Data_Access_Application.pdf">数据申请表</a> · <a href="docs/access.html">英文申请指南</a> · <a href="docs/terms.html">英文使用要求</a></p>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>FSBench-40K | FSBench-40K</title><style>body{margin:0;background:#f7f9fb;color:#20364a;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}header{background:#fff;border-bottom:1px solid #dce6ec;padding:18px max(24px,calc((100vw - 920px)/2))}header a{font-size:20px;font-weight:750;text-decoration:none;color:#16404e}main{max-width:920px;margin:35px auto 60px;padding:32px 42px 50px;background:#fff;border:1px solid #e1e9ee;border-radius:8px}h1{font-size:32px;line-height:1.25;letter-spacing:-.8px;color:#15354b;margin:8px 0 25px}h2{font-size:21px;line-height:1.4;color:#15354b;margin:32px 0 10px}p,li{color:#4a6477}li{padding:5px 0}a{color:#087476;text-underline-offset:3px}img{max-width:100%;height:auto;border:1px solid #e4ebef;border-radius:6px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #d4e1e8;padding:12px;text-align:left}th{background:#f0f5f7}code{background:#f0f5f7;padding:2px 5px;border-radius:3px;font-size:13px}.back{font-size:14px;display:inline-block;margin-bottom:20px}footer{font-size:13px;color:#60788a;margin-top:40px;padding-top:18px;border-top:1px solid #e1e9ee}a:focus-visible{outline:3px solid #d49d2e;outline-offset:3px}@media(max-width:650px){main{margin:15px 12px;padding:24px 20px}h1{font-size:27px}table{font-size:12px}td,th{padding:8px}} pre{overflow-x:auto;white-space:pre;background:#f0f5f7;padding:18px;border-radius:6px}pre code{padding:0;background:none}</style></head><body><header><a href="index.html">FSBench-40K</a></header><main><a class="back" href="index.html">← Project overview</a><h1 id="fsbench-40k">FSBench-40K</h1>
+<h3 id="foggy-smoke-benchmark-40k">Foggy Smoke Benchmark-40K</h3>
+<p><strong>面向雾环境下烟雾检测的四分类图像基准数据集</strong></p>
+<p><a href="index.html">English</a> · <a href="#数量与划分">数量与划分</a> · <a href="#获取方式">申请数据</a> · <a href="forms/FSBench-40K_Data_Access_Application.pdf">数据申请表</a></p>
+<p><strong>FSBench-40K</strong> 是 <strong>Foggy Smoke Benchmark-40K</strong> 的简称，面向雾环境下的图像级烟雾检测，重点关注烟与大气雾的区分及二者共存时的判别。数据集包含 <strong>Normal、Fog、Smoke 和 SmokeFog</strong> 四个类别，用于评价正常背景判别、雾干扰引起的误报以及雾中烟雾检测能力。</p>
+<p>本仓库提供数据集介绍、代表性图像、划分说明和研究申请材料，与 <strong><a href="docs/hprm-former.html">HPRM-Former</a></strong> 研究配套。</p>
 <p><img alt="图形摘要" src="assets/graphical-abstract.png"></p>
 <p>图中为概念性应用流程，所示置信度用于示意。</p>
-<h2>任务与类别</h2>
-<p>图像级分类包含 Normal、Fog、Smoke 和 SmokeFog，分别对应正常环境、雾、烟以及烟雾与大气雾共存。研究重点是区分雾与烟，并检测雾干扰下的烟雾状态。</p>
+<h2 id="任务与类别">任务与类别</h2>
+<p>基准任务为单幅图像的四分类，根据可见烟雾和大气雾的状态区分四类图像，尤其关注烟与雾共存的 SmokeFog 类别。</p>
+<table><thead><tr><th>类别</th><th>图像状态</th><th>评价作用</th></tr></thead><tbody>
+<tr><td><strong>Normal</strong></td><td>无可见烟雾和大气雾</td><td>正常背景参照</td></tr>
+<tr><td><strong>Fog</strong></td><td>有雾，无可见烟雾</td><td>雾干扰下的误报评价</td></tr>
+<tr><td><strong>Smoke</strong></td><td>有烟，无共存的大气雾</td><td>烟雾状态分类</td></tr>
+<tr><td><strong>SmokeFog</strong></td><td>烟与大气雾共存</td><td>雾干扰下的烟雾检测</td></tr>
+</tbody></table>
+<p>进行图像级预警评价时，<strong>Smoke 与 SmokeFog 为正类，Normal 与 Fog 为负类</strong>。Smoke 与 SmokeFog 之间的相互误判属于四分类错误，但不计为漏报。</p>
+<h2 id="代表性图像">代表性图像</h2>
 <p><img alt="四类样例" src="assets/category-examples.png"></p>
-<p>上图各行依次为 Normal、Fog、Smoke 和 SmokeFog，仅用于说明类别外观。</p>
-<h2>获取方式</h2>
-<p>本仓库用于项目介绍、图像展示和申请材料发布。申请人下载并填写申请表，注明研究项目、使用人员、用途和数据保管方案，签字后发送至通讯作者 <strong>Haicheng Qu（quhaicheng@lntu.edu.cn）</strong>。经审核同意后，由通讯作者提供完整数据及相应版本、类别和训练／验证／测试划分说明。</p>
-<p>完整数据不必放在 GitHub。复现实验时，应申请与论文实验对应的固定版本；展示图不作为交付清单。</p>
-<h2>主要使用要求</h2>
+<p>上图各行依次为 Normal、Fog、Smoke 和 SmokeFog。完整图像通过数据申请流程提供。</p>
+<h2 id="数量与划分">数量与划分</h2>
+<p>当前论文报告 <strong>40,579 张图像</strong>，训练、验证与测试的目标比例为 <strong>80% / 10% / 10%</strong>。下表列出当前稿件的类别与划分数量；获批交付版本的具体数量与图像清单随数据包提供。</p>
+<table><thead><tr><th>Split</th><th>Normal</th><th>Fog</th><th>Smoke</th><th>SmokeFog</th><th>Total</th></tr></thead><tbody>
+<tr><td>Train</td><td>8,290</td><td>7,304</td><td>8,815</td><td>8,053</td><td>32,462</td></tr>
+<tr><td>Validation</td><td>1,036</td><td>913</td><td>1,101</td><td>1,006</td><td>4,056</td></tr>
+<tr><td>Test</td><td>1,037</td><td>913</td><td>1,103</td><td>1,008</td><td>4,061</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>10,363</strong></td><td><strong>9,130</strong></td><td><strong>11,019</strong></td><td><strong>10,067</strong></td><td><strong>40,579</strong></td></tr>
+</tbody></table>
+<ul>
+<li><strong>训练集（train）</strong>：用于学习模型参数。</li>
+<li><strong>验证集（val）</strong>：用于配置选择和最佳检查点选择。</li>
+<li><strong>测试集（test）</strong>：模型与评价设置固定后，用于最终评价。</li>
+</ul>
+<p>开展基准比较时使用随数据提供的固定划分。版本记录说明划分协议和已建立的来源分组信息，清单字段与同源分组原则见<a href="docs/splits.html">划分说明</a>。</p>
+<h2 id="数据组织与版本">数据组织与版本</h2>
+<p>图像数据采用如下类别文件夹组织方式：</p>
+<pre><code>FSBench-40K/
+├── train/
+│   ├── Normal/
+│   ├── Fog/
+│   ├── Smoke/
+│   └── SmokeFog/
+├── val/
+│   ├── Normal/
+│   ├── Fog/
+│   ├── Smoke/
+│   └── SmokeFog/
+└── test/
+    ├── Normal/
+    ├── Fog/
+    ├── Smoke/
+    └── SmokeFog/</code></pre>
+<p>获批交付时同时提供版本编号、类别映射、训练／验证／测试清单、完整性校验和与版本说明。清单记录图像所属类别和集合；已建立的来源分组与来源说明一并保留。</p>
+<p>完整图像由通讯作者另行提供，本仓库发布展示内容与申请材料。版本记录方式见<a href="docs/releases.html">版本说明</a>。</p>
+<h2 id="获取方式">获取方式</h2>
+<ol>
+<li>阅读<a href="docs/access.html">申请指南</a>与<a href="docs/terms.html">使用要求</a>。</li>
+<li>下载并填写<a href="forms/FSBench-40K_Data_Access_Application.pdf">可填写的申请表 PDF</a>，注明研究目的、使用人员、用途与数据保管方案，并完成签字。</li>
+<li>将申请表发送至通讯作者 <strong>Haicheng Qu（<a href="mailto:quhaicheng@lntu.edu.cn">quhaicheng@lntu.edu.cn</a>）</strong>，优先使用机构邮箱。</li>
+<li>经审核同意后，由通讯作者提供完整数据及其固定版本、类别和训练／验证／测试划分说明。</li>
+</ol>
+<p>通讯作者单位：<strong>School of Software, Liaoning Technical University</strong>。请通过邮件提交申请，勿在公开 Issue 中上传填写后的申请表。</p>
+<h2 id="主要使用要求">主要使用要求</h2>
 <ol>
 <li>仅在获批的研究目的、项目和使用期限内使用；商业、产品开发或实际业务用途需另行说明并获得书面许可。</li>
 </ol>
@@ -53,5 +103,9 @@
 <ol>
 <li>申请表私下发给通讯作者，仅用于审核和访问管理，不在公开GitHub Issue中提交个人信息。</li>
 </ol>
-<h2>引用与联系</h2>
-<p>HPRM-Former 的完整英文题名、作者及引用格式见 <a href="index.html#citation">英文首页</a>。当前使用审稿中稿件的引用格式，发表后更新正式出版信息。数据访问与许可事宜请联系 <a href="mailto:quhaicheng@lntu.edu.cn">quhaicheng@lntu.edu.cn</a>。</p><footer>FSBench-40K · HPRM-Former · <a href="mailto:quhaicheng@lntu.edu.cn">Contact the corresponding author</a></footer></main></body></html>
+<h2 id="相关论文">相关论文</h2>
+<p><strong>A Heterogeneity-Aware Prototype Routing Transformer with Consensus-Disagreement Memory for Smoke Detection under Foggy Conditions</strong></p>
+<p>Yao Wei, Haicheng Qu, Tong Gao, Hao Chen, and Cuiping Shi</p>
+<p>HPRM-Former 是与本数据集配套的烟雾检测分类框架，模型结构与三个核心模块的说明见<a href="docs/hprm-former.html">模型介绍页面</a>。</p>
+<h2 id="引用与联系">引用与联系</h2>
+<p>完整引用格式见<a href="index.html#citation">英文首页</a>。当前采用审稿中稿件的引用信息，发表后更新正式出版信息。使用数据时请同时报告交付版本编号，并遵循交付材料中的来源引用要求。数据访问、来源说明或更正事宜请联系 <a href="mailto:quhaicheng@lntu.edu.cn">quhaicheng@lntu.edu.cn</a>。</p><footer>FSBench-40K · HPRM-Former · <a href="mailto:quhaicheng@lntu.edu.cn">Contact the corresponding author</a></footer></main></body></html>

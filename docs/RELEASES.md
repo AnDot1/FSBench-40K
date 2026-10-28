@@ -23,3 +23,5 @@ Use the release and train / validation / test manifests supplied for the relevan
 | Rights | Applicable permissions, attribution and third-party conditions |
 
 Actual values are provided with the approved delivery. No image release is created by this documentation alone.
+
+The [split documentation](SPLITS.md) provides the manuscript reference distribution, folder convention and manifest fields.
