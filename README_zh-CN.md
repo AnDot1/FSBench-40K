@@ -84,7 +84,7 @@ FSBench-40K/
 3. 将申请表发送至通讯作者 **Haicheng Qu（[quhaicheng@lntu.edu.cn](mailto:quhaicheng@lntu.edu.cn)）**，优先使用机构邮箱。
 4. 经审核同意后，由通讯作者提供完整数据及其固定版本、类别和训练／验证／测试划分说明。
 
-通讯作者单位：**School of Software, Liaoning Technical University**。请通过邮件提交申请，勿在公开 Issue 中上传填写后的申请表。
+请通过邮件提交申请，勿在公开 Issue 中上传填写后的申请表。
 
 ## 主要使用要求
 
