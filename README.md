@@ -89,7 +89,6 @@ The complete images are provided separately by the corresponding author. This re
 4. After approval, obtain the dataset and its fixed version and split records through the delivery instructions provided by the corresponding author.
 
 **Corresponding author:** Haicheng Qu  
-**Institution:** School of Software, Liaoning Technical University  
 **Email:** [quhaicheng@lntu.edu.cn](mailto:quhaicheng@lntu.edu.cn)
 
 Please send completed forms by email rather than posting personal details or data links in GitHub issues. Requests are assessed using the stated research purpose, verifiable affiliation, data-handling plan and applicable source permissions.
